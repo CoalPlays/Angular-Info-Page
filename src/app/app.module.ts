@@ -1,25 +1,29 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import { LostAndFoundComponent } from './lost-and-found/lost-and-found.component';
-import { MainContentComponent } from './main-content/main-content.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {environment} from '../environments/environment';
+import {LostAndFoundComponent} from './lost-and-found/lost-and-found.component';
+import {NavigationComponent} from './navigation/navigation.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import {HttpClientModule} from "@angular/common/http";
+import {MainSiteComponent} from './main-site/main-site.component';
+import {AppRoutingModule} from "./app-routing/app-routing.module";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
     AppComponent,
     LostAndFoundComponent,
-    MainContentComponent,
-    NavigationComponent
+    NavigationComponent,
+    MainSiteComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
@@ -30,7 +34,9 @@ import {MatIconModule} from "@angular/material/icon";
     }),
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

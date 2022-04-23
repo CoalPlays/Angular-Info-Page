@@ -1,0 +1,21 @@
+.mat-toolbar {
+  display: flex;
+
+  .mat-mini-fab {
+    box-shadow: none;
+  }
+
+  div {
+    flex: 1;
+  }
+
+  .right {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .mat-icon {
+    height: 35px;
+    width: 35px;
+  }
+}
